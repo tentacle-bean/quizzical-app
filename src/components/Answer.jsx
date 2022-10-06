@@ -36,7 +36,7 @@ export default function Answer(props){
                 name="selected"
                 value={props.answer}
                 checked={props.selected === props.answer}
-                onChange={props.handleChange}
+                onChange={(event) => props.handleChange(event, props.correct)}
             />
         </label>
         

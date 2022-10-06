@@ -12,16 +12,48 @@ export default function Quiz(){
 
     const [apiData, setApiData] = React.useState([])
     const [checking, setChecking] = React.useState(false)
+    const [points, setPoints] = React.useState([])
+
+    function handlePoints(point, index){
+        setPoints(prev => {
+            const copy = prev.map(item => item)
+            copy[index] = point
+            return copy
+        })
+        console.log(points)
+    }
+
 
     React.useEffect(() => {
-        fetch(`https://opentdb.com/api.php?amount=5&category=15`)
+        fetch(`https://opentdb.com/api.php?amount=11&category=17&difficulty=hard`)
             .then(res => {
                 if(!res.ok){
                     throw Error("Failed to retrieve question data")
                 }
                 return res.json()
             })
-            .then(data => setApiData(data.results))
+            .then(data => {
+                let questions = data.results
+                questions = questions.map(question => {
+                    const answers = []
+                    answers.push(question.correct_answer)
+                    question.incorrect_answers.map(inc => answers.push(inc))
+
+                    for (let i = answers.length - 1; i > 0; i--) {
+                        const j = Math.floor(Math.random() * (i + 1));
+                        const temp = answers[i];
+                        answers[i] = answers[j];
+                        answers[j] = temp;
+                    }
+
+                    return{
+                        ...question,
+                        answers: answers
+                    }
+                })           
+                
+                setApiData(questions)
+            })
             .catch(err => console.log(err))
     }, [])
     
@@ -32,11 +64,13 @@ export default function Quiz(){
         return (<Question
             question={decode(data.question)}
             correct={decode(data.correct_answer)}
-            wrong={data.incorrect_answers.map(ans => decode(ans))}
+            answers={data.answers.map(ans => decode(ans))}
             checking={checking}
+            handlePoints={handlePoints}
         />)
     })
     
+
     return(
         <div className='quiz'>
             {questions}
