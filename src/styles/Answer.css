@@ -1,0 +1,48 @@
+.answer + .answer{
+    margin-left: 1em;
+}
+
+.answer{
+    min-width: 4em;
+    text-align: center;
+    padding: 0.25em 0.5em;
+    border: 1px solid var(--clr-btn);
+    border-radius: 8px;
+    font-size: var(--fs-small);
+    font-weight: var(--fw-m);
+}
+
+.answer:hover,
+.answer:focus{
+    cursor: pointer;
+}
+
+.answer-input{
+    position: absolute;
+    opacity: 0;
+    height: 0;
+    width: 0;
+}
+
+.answer-selected{
+    background-color: var(--clr-selected);
+}
+
+.answer-selected,
+.checked-answer-correct,
+.checked-answer-wrong{
+    border: none;
+}
+
+.checked-answer,
+.checked-answer-wrong{
+    opacity: 0.5;
+}
+
+.checked-answer-correct{
+    background-color: var(--clr-correct);
+}
+
+.checked-answer-wrong{
+    background-color: var(--clr-wrong);
+}

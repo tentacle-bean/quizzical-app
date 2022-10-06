@@ -1,0 +1,12 @@
+.quiz{
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    margin: 2em 3em;
+    
+}
+
+.quiz-btn{
+    align-self: center;
+    margin-top: 2em;
+}

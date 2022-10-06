@@ -1,0 +1,13 @@
+.question{
+    padding: 1em 0;
+    border-bottom: 0.794239px solid var(--clr-line);
+}
+
+.answer-container{
+    display: flex;
+}
+
+.question-text{
+    font-size: var(--fs-main);
+    margin-top: 0;
+}

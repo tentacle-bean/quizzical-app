@@ -1,0 +1,22 @@
+.intro{
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.title{
+    font-weight: var(--fw-b);
+    font-family: var(--ff-s);
+    font-size: var(--fs-title);
+    margin-bottom: 0;
+}
+
+.subtitle{
+    font-size: var(--fs-main);
+    margin-bottom: 2em;
+}
+
+.btn-start{
+    padding: 1em 4em;
+}

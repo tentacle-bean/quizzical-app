@@ -1,0 +1,77 @@
+:root{
+    --clr-light: #F5F7FB;
+    --clr-btn: #4D5B9E;
+    --clr-text: #293264;
+    --clr-selected: #D6DBF5;
+    --clr-correct: #94D7A2;
+    --clr-wrong: #F8BCBC;
+    --clr-line: #DBDEF0;
+
+    --ff-p: 'Inter', sans-serif;
+    --ff-s: 'Karla', sans-serif;
+
+    --fw-r: 400;
+    --fw-m: 500;
+    --fw-b: 700;
+
+    --fs-title: 2rem;
+    --fs-main: 1rem;
+    --fs-mid: 0.8rem;
+    --fs-small: 0.64rem;
+}
+
+body{
+    margin: 0;
+    padding: 0;
+    background-color: #1C1C1C;
+    height: 100vh;
+}
+
+body,
+main{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.main{
+    background-color: var(--clr-light);
+    color: var(--clr-text);
+    font-family: var(--ff-p);
+    min-height: 550px;
+    width: 550px;
+    overflow: hidden;
+    position: relative;
+}
+
+.blob-blue,
+.blob-yellow{
+    position: absolute;
+}
+
+.blob-blue{
+    bottom: -120px;
+    left: -150px;
+}
+
+.blob-yellow{
+    top: -120px;
+    right: -120px;
+}
+
+button{
+    background-color: var(--clr-btn);
+    font-weight: var(--fw-m);
+    font-family: var(--ff-p);
+    color: var(--clr-light);
+    border: none;
+    padding: 1em 2.5em;
+    border-radius: 1em;
+    transition: transform 0.2s;
+}
+
+button:hover,
+button:focus{
+    transform: scale(1.1);
+    cursor: pointer;
+}
