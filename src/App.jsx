@@ -6,23 +6,23 @@ import blobB from './assets/blob-b.png'
 import blobY from './assets/blob-y.png'
 
 export default function App(){
-    // const [quizStarted, setQuizStarted] = React.useState(false)
+    const [quizStarted, setQuizStarted] = React.useState(false)
 
-    // function startQuiz(){
-    //     setQuizStarted(true)
-    // }
+    function startQuiz(){
+        setQuizStarted(true)
+    }
 
-    console.log("aaa")
+    console.log("app rerendered")
 
     return(
         <main className='main'>
-            {/* {!quizStarted ? 
+            {!quizStarted ? 
                 <Intro startQuiz={startQuiz}/> :
                 <Quiz />
-            } */}
-            {/* <Quiz /> */}
-            {/* <img className="blob-blue" src={blobB} />
-            <img className="blob-yellow" src={blobY} /> */}
+            }
+
+            <img className="blob-blue" src={blobB} />
+            <img className="blob-yellow" src={blobY} />
         </main>
     )
 }
