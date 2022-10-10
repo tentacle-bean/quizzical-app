@@ -15,27 +15,22 @@ export default function App(){
     )
     
 
-
     function startQuiz(){
         setQuizStarted(prev => !prev)
     }
 
 
     function handleChange(event){
-        
         const {name, value} = event.target
-        setQuizOptions(prev => {
-            // console.log(name)
-            // console.log(value)
-
-            return { 
+        setQuizOptions(prev => (
+            { 
                 ...prev,
                 [name]: value
             }
-        })
+        ))
         
     }
-    //console.log(quizOptions)
+
 
     return(
         <main className='main'>

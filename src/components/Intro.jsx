@@ -2,8 +2,6 @@ import React from 'react'
 import '../styles/Intro.css'
 
 export default function Intro(props){
-    console.log(props.quizOptions)
-
     return (
         <div className='intro'>
             <h1 className='title'>Quizzical</h1>
@@ -14,7 +12,7 @@ export default function Intro(props){
                 <select
                     id="category"
                     name="category"
-                    value={props.quizOptions}
+                    value={props.quizOptions.category}
                     onChange={props.handleChange}
                 >
                     <option value={9}>General Knowledge</option>
@@ -31,7 +29,7 @@ export default function Intro(props){
                 <select
                     id="difficulty"
                     name="difficulty"
-                    value={props.quizOptions}
+                    value={props.quizOptions.difficulty}
                     onChange={props.handleChange}
                 >
                     <option value="easy">Easy</option>
