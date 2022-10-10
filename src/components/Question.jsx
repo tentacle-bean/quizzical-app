@@ -5,13 +5,15 @@ import '../styles/Question.css'
 export default function Question(props){
     const [formData, setFormData] = React.useState("")
 
-    function handleChange(event, point){
+
+    function handleChange(event, isCorrect){
         if(!props.checking){
             const {value} = event.target
             setFormData(value)
-            props.handlePoints(point)
+            props.handlePoints(props.index, isCorrect)
         }
     }
+
 
     const answers = props.answers.map(ans => 
         <Answer 

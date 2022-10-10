@@ -17,6 +17,16 @@
     margin-bottom: 2em;
 }
 
+/* .selector{
+    width: 90%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.selector select{
+    width: 60%;
+} */
+
 .btn-start{
     padding: 1em 4em;
 }

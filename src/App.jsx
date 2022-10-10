@@ -7,18 +7,41 @@ import blobY from './assets/blob-y.png'
 
 export default function App(){
     const [quizStarted, setQuizStarted] = React.useState(false)
+    const [quizOptions, setQuizOptions] = React.useState(
+        {
+            category: "9",
+            difficulty: "easy"
+        }
+    )
+    
+
 
     function startQuiz(){
-        setQuizStarted(true)
+        setQuizStarted(prev => !prev)
     }
 
-    console.log("app rerendered")
+
+    function handleChange(event){
+        
+        const {name, value} = event.target
+        setQuizOptions(prev => {
+            // console.log(name)
+            // console.log(value)
+
+            return { 
+                ...prev,
+                [name]: value
+            }
+        })
+        
+    }
+    //console.log(quizOptions)
 
     return(
         <main className='main'>
             {!quizStarted ? 
-                <Intro startQuiz={startQuiz}/> :
-                <Quiz />
+                <Intro startQuiz={startQuiz} quizOptions={quizOptions} handleChange={handleChange}/> :
+                <Quiz startQuiz={startQuiz} quizOptions={quizOptions}/>
             }
 
             <img className="blob-blue" src={blobB} />
