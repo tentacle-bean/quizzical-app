@@ -3,6 +3,7 @@
     display: flex;
     align-items: center;
     flex-direction: column;
+    margin: 2em 2em;
 }
 
 .title{
@@ -15,23 +16,42 @@
 .subtitle{
     font-size: var(--fs-main);
     margin-bottom: 2em;
+    text-align: center;
 }
 
 .selector{
     width: 90%;
     display: flex;
+    flex-direction: column;
     justify-content: space-between;
+    
+}
+
+.selector label{
+    margin-bottom: 0.5em;
+}
+
+.selector select{
+    padding: 0.5em
 }
 
 .selector + .selector{
     margin-top: 1em;
 }
 
-.selector select{
-    width: 60%;
-}
+
 
 .btn-start{
     margin-top: 3em;
     padding: 1em 4em;
+}
+
+@media (min-width: 400px){
+    .selector{
+        flex-direction: row;
+        align-items: center;
+    }
+    .selector select{
+        width: 60%;
+    }
 }

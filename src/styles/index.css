@@ -14,10 +14,23 @@
     --fw-m: 500;
     --fw-b: 700;
 
-    --fs-title: 2rem;
-    --fs-main: 1rem;
-    --fs-mid: 0.8rem;
-    --fs-small: 0.64rem;
+    --fs-title: 1.64rem;
+    --fs-main: 0.8rem;
+    --fs-mid: 0.64rem;
+    --fs-small: 0.5rem;
+}
+
+@media (min-width: 400px){
+    :root{
+        --fs-title: 2rem;
+        --fs-main: 1rem;
+        --fs-mid: 0.8rem;
+        --fs-small: 0.64rem;
+    }
+}
+
+*{
+    box-sizing: border-box;
 }
 
 body{
@@ -40,6 +53,8 @@ main{
     font-family: var(--ff-p);
     min-height: 550px;
     width: 550px;
+    /* padding: 0 5em; */
+    max-width: 100vw;
     overflow: hidden;
     position: relative;
 }
@@ -68,6 +83,7 @@ button{
     padding: 1em 2.5em;
     border-radius: 1em;
     transition: transform 0.2s;
+    font-size: var(--fs-mid);
 }
 
 button:hover,
